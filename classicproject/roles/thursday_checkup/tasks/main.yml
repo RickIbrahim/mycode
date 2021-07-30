@@ -1,0 +1,26 @@
+---
+- name: Mkae sure sl package is up to date
+  apt:
+          name: sl
+          state: present
+  become: yes
+
+- name: Mkae sure cowsay package ie up to date
+  apt:
+          name: cowsay
+          state: present
+  become: yes
+
+- name: Make sure bastet package is up to date
+  apt:
+          name: bastet
+          state: present
+  become: yes
+
+
+- name: Insert a line into loggy
+  lineinfile:
+       path: "~/loggy.log"
+       create: true
+       line: "{{ ansible_date_time.iso8601 }} - Passed Checkup"
+  become: false

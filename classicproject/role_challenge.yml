@@ -1,0 +1,8 @@
+---
+- name: Role Challenge for Thursday
+  hosts: planetexpress:!farnsworth
+  gather_facts: yes
+
+  roles:
+          - thursday_checkup
+
